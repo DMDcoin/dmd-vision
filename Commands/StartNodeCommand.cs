@@ -2,7 +2,7 @@
 
 
 
-namespace DMDVision 
+namespace DMDVision.Commands 
 {
   public class StartNodeCommand
   {

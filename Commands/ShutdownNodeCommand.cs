@@ -2,11 +2,9 @@
 
 
 
-namespace DMDVision 
+namespace DMDVision.Commands 
 {
   public class ShutdownNodeCommand
   {
-
   }
-
 }
