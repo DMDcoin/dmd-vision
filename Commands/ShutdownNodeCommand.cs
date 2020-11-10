@@ -4,7 +4,7 @@
 
 namespace DMDVision 
 {
-  public class StakeCommand
+  public class ShutdownNodeCommand
   {
 
   }
