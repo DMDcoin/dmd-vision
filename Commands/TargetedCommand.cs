@@ -2,7 +2,9 @@
 
 
 
+using System.Numerics;
 using DMDVision.Commands;
+
 
 namespace DMDVision.Commands
 {
@@ -13,10 +15,9 @@ namespace DMDVision.Commands
 
     public abstract CommandExecutionResult Execute(CommandContext context);
   }
-  
-  // public abstract class ValueTransferingCommand : TargetedCommand
-  // {
-  //    public string Value;
-  // }
 
+  public abstract class ValueTransferingCommand : TargetedCommand
+  {
+     public BigInteger Value;
+  }
 }

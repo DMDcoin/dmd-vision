@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DMDVision.Commands;
 
-namespace dmd_vision
+namespace DMDVision
 {
     class Program
     {
@@ -13,14 +13,14 @@ namespace dmd_vision
 
             commands.Add(new DMDVision.Commands.ClaimFundsCommand());
 
+            var originalForegroundColor = Console.ForegroundColor;
             foreach(ICommand command in commands) 
             {
                 CommandExecutionResult result = command.Execute(context);
+                Console.ForegroundColor = result.Success ? originalForegroundColor : ConsoleColor.Red;
                 Console.WriteLine(result.Text);
             }
-
         }
-
         
     }
 }
