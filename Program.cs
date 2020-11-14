@@ -16,7 +16,19 @@ namespace DMDVision
             var originalForegroundColor = Console.ForegroundColor;
             foreach(ICommand command in commands) 
             {
-                CommandExecutionResult result = command.Execute(context);
+                bool success = false;
+                string message = "";
+                try 
+                {
+                    message = command.Execute(context);
+                    success = true;
+                }
+                catch (Exception e) 
+                {
+                    success = false;
+                    message = e.Message;
+                }
+                CommandExecutionResult result = new CommandExecutionResult(success, message);
                 Console.ForegroundColor = result.Success ? originalForegroundColor : ConsoleColor.Red;
                 Console.WriteLine(result.Text);
             }

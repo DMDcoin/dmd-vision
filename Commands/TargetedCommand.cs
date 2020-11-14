@@ -13,7 +13,7 @@ namespace DMDVision.Commands
   {
     public string TargetAddress;
 
-    public abstract CommandExecutionResult Execute(CommandContext context);
+    public abstract string Execute(CommandContext context);
   }
 
   public abstract class ValueTransferingCommand : TargetedCommand

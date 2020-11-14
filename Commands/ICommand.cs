@@ -20,6 +20,6 @@ namespace DMDVision.Commands
 
   public interface ICommand 
   {
-    CommandExecutionResult Execute(CommandContext context);
+    string Execute(CommandContext context);
   }
 }

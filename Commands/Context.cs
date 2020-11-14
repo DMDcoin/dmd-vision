@@ -1,6 +1,9 @@
 
 
 
+using System.Collections.Generic;
+using System.IO;
+using DMDVision.Nodes;
 using Nethereum.Web3;
 
 namespace DMDVision.Commands
@@ -8,8 +11,6 @@ namespace DMDVision.Commands
 
   public class ContractsAddressInformation 
 {
-
-
     // const VALIDATOR_SET_CONTRACT = '0x1000000000000000000000000000000000000001';
     // const BLOCK_REWARD_CONTRACT = '0x2000000000000000000000000000000000000001';
     // const RANDOM_CONTRACT = '0x3000000000000000000000000000000000000001';
@@ -25,6 +26,8 @@ namespace DMDVision.Commands
   {
     public ContractsAddressInformation ContractsAddressInformation = new ContractsAddressInformation();
 
+    public DirectoryInfo TestnetRootDirectory { get; set; }
+
     private Contracts.StakingHbbft.StakingHbbftService m_Staking;
     public Contracts.StakingHbbft.StakingHbbftService Staking
     {
@@ -37,6 +40,8 @@ namespace DMDVision.Commands
         return m_Staking;
       }
     }
+
+    public Dictionary<string, NodeInfo> NodeInfos = new Dictionary<string, NodeInfo>();
 
     public Web3 Web3 
     {

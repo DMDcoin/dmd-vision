@@ -6,7 +6,7 @@ namespace DMDVision.Commands
 {
   public class StakeCommand : ValueTransferingCommand
   {
-    public override CommandExecutionResult Execute(CommandContext context)
+    public override string Execute(CommandContext context)
     {
       AddPoolFunction addPoolFunction = new AddPoolFunction();
       addPoolFunction.AmountToSend = this.Value;
@@ -17,10 +17,10 @@ namespace DMDVision.Commands
       
       if (task.Exception != null) 
       {
-        return new CommandExecutionResult(true, task.Exception.ToString());
+        throw task.Exception;
       }
       
-      return new CommandExecutionResult(true, task.Result);
+      return task.Result;
     }
   }
 
